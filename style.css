@@ -1,0 +1,24 @@
+    .TdClass {
+        /* border: 1px solid red; */
+        width: 32px;
+        height: 32px;
+        
+    }
+    table tr td:hover{
+        background-color: whitesmoke;
+    }
+
+    #GameBoard {
+        border-collapse: collapse;
+    }
+
+    body {}
+
+    #MainDiv {
+        width: 340px;
+        height: 340px;
+        background-image: url(photo_2025-11-24_10-57-04.jpg);
+        background-size: 340px;
+        background-repeat: no-repeat;
+
+    }
