@@ -13,8 +13,10 @@ let CreateTable = () => {
             let createTd = document.createElement("td");
             createTd.className = "TdClass";
             let Id = `${i}-${j}`;// i شده سطر و جی شده ستون 
-            createTd.id = Id;       
+            createTd.id = Id;
 
+
+            // id ro be zoj va fard taghsim mikonim
             // let zoj = i / 2 === 0;
             // if ((i+j) % 2 === 0) {
             //     createTd.style.backgroundColor = "blue";
@@ -23,14 +25,24 @@ let CreateTable = () => {
             //     createTd.style.backgroundColor = "red"
 
             // )
-            let mouseHover = createTd.addEventListener("mouseover", ()=>{
-                createTd.style.backgroundColor = "white";
-                // createTr.innerText = Id;
+
+
+            createTd.addEventListener("click", () => {
+                createTd.style.backgroundColor = "red";
             })
-            let mouseOutRang = createTd.addEventListener("mouseout", ()=>{
-                createTd.style.backgroundColor = "";
-                
-            })
+            // let mouseHover = createTd.addEventListener("mouseover", () => {
+            //     createTd.style.backgroundColor = "white";
+
+
+
+            //     // createTd.innerText = Id;
+            // })
+
+
+            // let mouseOutRang = createTd.addEventListener("mouseout", ()=>{
+            //     createTd.style.backgroundColor = "";
+
+            // })
 
             createTr.appendChild(createTd);
         }
