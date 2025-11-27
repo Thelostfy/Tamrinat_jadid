@@ -1,4 +1,5 @@
 let gameboard = document.getElementById("GameBoard");
+let Tas = document.getElementById("Tas");
 
 
 
@@ -13,7 +14,17 @@ let CreateTable = () => {
             let createTd = document.createElement("td");
             createTd.className = "TdClass";
             let Id = `${i}-${j}`;// i شده سطر و جی شده ستون 
-            createTd.id = Id;
+            // createTd.id = Id;
+            // let Tds = document.getElementsByClassName("TdClass");
+            let Tds = document.getElementsByTagName("td");
+             console.log(Tds.length);
+             
+            // for (let c = 0; c < Tds.length; c++) {
+            
+            //     console.log(Tds);
+                
+                
+            // }
 
 
             // id ro be zoj va fard taghsim mikonim
@@ -52,4 +63,12 @@ let CreateTable = () => {
         gameboard.appendChild(createTr);
     }
 }
+// Tas.addEventListener("click" , ()=>{
+//     let X = [1,2,3,4,5,6]
+//         let cell = document.getElementById(`${i}-${j}`)
+//         let AdadRandom = Math.floor(Math.random() * 6)+ 1;
+//         cell.style.backgroundColor = "red";
+        
+    
+// })
 CreateTable()
