@@ -22,3 +22,9 @@
         background-repeat: no-repeat;
 
     }
+.FardClass {
+    direction: rtl;
+}
+.ZojClass {
+    direction: ltr;
+}
