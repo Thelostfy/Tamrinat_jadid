@@ -1,11 +1,11 @@
 let gameboard = document.getElementById("GameBoard");
 let Tas = document.getElementById("Tas");
 let currentPosition = 0;
-let MaxOfPosition = 99;
+let MaxOfPosition = 100;
 
 
 let CreateTable = () => {
-    let id = 0;
+    let id = 1;
     for (let i = 0; i < 10; i++) {
 
 
@@ -25,7 +25,7 @@ let CreateTable = () => {
             createTd.id = id;
             id++;
             // let Tds = document.getElementsByClassName("TdClass");
-            let Tds = document.getElementsByTagName("td");
+            // let Tds = document.getElementsByTagName("td");
             //  console.log(Tds.length);
 
             // for (let c = 0; c < Tds.length; c++) {
@@ -77,9 +77,33 @@ Tas.addEventListener("click", () => {
     console.log(AdadRandom);
 
     let newPosition = currentPosition + AdadRandom;
+    if (AdadRandom   === 1) {
+        Tas.style.backgroundImage = 'url("/image/1.png")'
+        Tas.innerText = "";
+    }
+    if (AdadRandom   === 2) {
+        Tas.style.backgroundImage = 'url("/image/2.png")'
+        Tas.innerText = "";
+    }
+    if (AdadRandom   === 3) {
+        Tas.style.backgroundImage = 'url("/image/3.png")'
+        Tas.innerText = "";
+    }
+    if (AdadRandom   === 4) {
+        Tas.style.backgroundImage = 'url("/image/4.png")'
+        Tas.innerText = "";
+    }
+    if (AdadRandom   === 5) {
+        Tas.style.backgroundImage = 'url("/image/5.png")'
+        Tas.innerText = "";
+    }
+    if (AdadRandom   === 6) {
+        Tas.style.backgroundImage = 'url("/image/6.jpg")'
+        Tas.innerText = "";
+    }
 
     if (newPosition > MaxOfPosition) {
-        alert("Move exceeds board limits!");
+
         return;
     }
     // tarif kardan nardeboomha
@@ -105,31 +129,33 @@ Tas.addEventListener("click", () => {
         newPosition = 82;
     };
 
+    
+
 // tarif marha
-    if (newPosition === 32) {
-        newPosition = 14
+    if (newPosition === 33) {
+        newPosition = 15
     };
-    if (newPosition === 58) {
-        newPosition = 49;
+    if (newPosition === 59) {
+        newPosition = 50;
     };
 
-    if (newPosition === 66) {
-        newPosition = 9;
+    if (newPosition === 67) {
+        newPosition = 10;
     };
-    if (newPosition === 70) {
-        newPosition = 30;
+    if (newPosition === 71) {
+        newPosition = 31;
 
     };
-    if (newPosition === 86) {
-        newPosition = 52;
+    if (newPosition === 87) {
+        newPosition = 53;
     };
-    if (newPosition === 97) {
-        newPosition = 78;
+    if (newPosition === 98) {
+        newPosition = 79;
     };
-    if (newPosition === 93) {
-        newPosition = 82;
+    if (newPosition === 94) {
+        newPosition = 83;
     };
-    document.getElementById(currentPosition).style.backgroundColor = "";
+    // document.getElementById(currentPosition).style.backgroundColor = "";
 
     if (currentPosition !== 0) {
         document.getElementById(currentPosition).style.backgroundColor = "";
