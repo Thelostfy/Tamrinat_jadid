@@ -1,4 +1,4 @@
-let gameboard = document.getElementById("GameBoard");
+let gameboard = document.getElementById("MainDiv");
 let Tas = document.getElementById("Tas");
 let currentPosition = 0;
 let MaxOfPosition = 100;
@@ -6,98 +6,61 @@ let MaxOfPosition = 100;
 
 let CreateTable = () => {
     let id = 1;
-    for (let i = 0; i < 10; i++) {
-
-
-        let createTr = document.createElement("tr");
-        createTr.className = 'TRClass';
-
-
-
-
-
-
-
-        for (let j = 0; j < 10; j++) {
-
-            let createTd = document.createElement("td");
-            createTd.className = "TdClass";
-            createTd.id = id;
-            id++;
-            // let Tds = document.getElementsByClassName("TdClass");
-            // let Tds = document.getElementsByTagName("td");
-            //  console.log(Tds.length);
-
-            // for (let c = 0; c < Tds.length; c++) {
-
-            //     console.log(Tds);
-
-
-
-            // id ro be zoj va fard taghsim mikonim
-            // let zoj = i % 2 === 0;
-
-
-
-
-            createTd.addEventListener("click", () => {
-                createTd.style.backgroundColor = "red";
-            })
-            // let mouseHover = createTd.addEventListener("mouseover", () => {
-            //     createTd.style.backgroundColor = "white";
-
-            // if (i  % 2 === 0) {
-            //     createTr.classList.add("ZojClass");
-            // }
-            // else {
-            //     createTr.classList.add("FardClass");
-            // }
-
-
-            //     // createTd.innerText = Id;
-            // })
-
-
-            // let mouseOutRang = createTd.addEventListener("mouseout", ()=>{
-            //     createTd.style.backgroundColor = "";
-
-            // })
-
-            createTr.appendChild(createTd);
+    for (let row = 0; row < 10; row++) {
+        if (row % 2 === 0) {
+            for (let col = 0; col < 10; col++) {
+                let div = document.createElement("div");
+                div.className = "cell";
+                div.id = id;
+                div.innerText = id;
+                gameboard.appendChild(div);
+                id++;
+            }
+        } 
+        else {
+            let baraxe = [];
+            for (let col = 0; col < 10; col++) {
+                let div = document.createElement("div");
+                div.className = "cell";
+                div.id = id;
+                div.innerText = id;
+                baraxe.unshift(div); 
+                id++;
+            }
+            baraxe.forEach((div) => {
+                gameboard.appendChild(div);
+            });
         }
-
-
-
-        gameboard.appendChild(createTr);
     }
 }
+
 
 Tas.addEventListener("click", () => {
     let AdadRandom = Math.floor(Math.random() * 6) + 1;
     console.log(AdadRandom);
 
     let newPosition = currentPosition + AdadRandom;
-    if (AdadRandom   === 1) {
+    if (AdadRandom === 1) {
         Tas.style.backgroundImage = 'url("/image/1.png")'
         Tas.innerText = "";
     }
-    if (AdadRandom   === 2) {
+    if (AdadRandom === 2) {
         Tas.style.backgroundImage = 'url("/image/2.png")'
         Tas.innerText = "";
     }
-    if (AdadRandom   === 3) {
+    if (AdadRandom === 3) {
         Tas.style.backgroundImage = 'url("/image/3.png")'
         Tas.innerText = "";
     }
-    if (AdadRandom   === 4) {
+    if (AdadRandom === 4) {
         Tas.style.backgroundImage = 'url("/image/4.png")'
         Tas.innerText = "";
     }
-    if (AdadRandom   === 5) {
+    if (AdadRandom === 5) {
         Tas.style.backgroundImage = 'url("/image/5.png")'
         Tas.innerText = "";
     }
-    if (AdadRandom   === 6) {
+    if (AdadRandom === 6) {
         Tas.style.backgroundImage = 'url("/image/6.jpg")'
         Tas.innerText = "";
     }
@@ -129,9 +92,9 @@ Tas.addEventListener("click", () => {
         newPosition = 82;
     };
 
-    
 
-// tarif marha
+
+    // tarif marha
     if (newPosition === 33) {
         newPosition = 15
     };
