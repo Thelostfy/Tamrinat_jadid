@@ -5,7 +5,7 @@ let MaxOfPosition = 100;
 
 
 let CreateTable = () => {
-    let id = 1;
+    let id = 100;
     for (let row = 0; row < 10; row++) {
         if (row % 2 === 0) {
             for (let col = 0; col < 10; col++) {
@@ -14,7 +14,7 @@ let CreateTable = () => {
                 div.id = id;
                 div.innerText = id;
                 gameboard.appendChild(div);
-                id++;
+                id--;
             }
         } 
         else {
@@ -25,12 +25,13 @@ let CreateTable = () => {
                 div.id = id;
                 div.innerText = id;
                 baraxe.unshift(div); 
-                id++;
+                id--;
             }
             baraxe.forEach((div) => {
                 gameboard.appendChild(div);
             });
         }
+        
     }
 }
 
@@ -38,32 +39,32 @@ let CreateTable = () => {
 Tas.addEventListener("click", () => {
     let AdadRandom = Math.floor(Math.random() * 6) + 1;
     console.log(AdadRandom);
-
+    Tas.className = "adad1";
     let newPosition = currentPosition + AdadRandom;
-    if (AdadRandom === 1) {
-        Tas.style.backgroundImage = 'url("/image/1.png")'
-        Tas.innerText = "";
-    }
-    if (AdadRandom === 2) {
-        Tas.style.backgroundImage = 'url("/image/2.png")'
-        Tas.innerText = "";
-    }
-    if (AdadRandom === 3) {
-        Tas.style.backgroundImage = 'url("/image/3.png")'
-        Tas.innerText = "";
-    }
-    if (AdadRandom === 4) {
-        Tas.style.backgroundImage = 'url("/image/4.png")'
-        Tas.innerText = "";
-    }
-    if (AdadRandom === 5) {
-        Tas.style.backgroundImage = 'url("/image/5.png")'
-        Tas.innerText = "";
-    }
-    if (AdadRandom === 6) {
-        Tas.style.backgroundImage = 'url("/image/6.jpg")'
-        Tas.innerText = "";
-    }
+    // if (AdadRandom === 1) {
+    //     Tas.style.backgroundImage = 'url("/image/1.png")'
+    //     Tas.innerText = "";
+    // }
+    // if (AdadRandom === 2) {
+    //     Tas.style.backgroundImage = 'url("/image/2.png")'
+    //     Tas.innerText = "";
+    // }
+    // if (AdadRandom === 3) {
+    //     Tas.style.backgroundImage = 'url("/image/3.png")'
+    //     Tas.innerText = "";
+    // }
+    // if (AdadRandom === 4) {
+    //     Tas.style.backgroundImage = 'url("/image/4.png")'
+    //     Tas.innerText = "";
+    // }
+    // if (AdadRandom === 5) {
+    //     Tas.style.backgroundImage = 'url("/image/5.png")'
+    //     Tas.innerText = "";
+    // }
+    // if (AdadRandom === 6) {
+    //     Tas.style.backgroundImage = 'url("/image/6.jpg")'
+    //     Tas.innerText = "";
+    // }
 
     if (newPosition > MaxOfPosition) {
 
