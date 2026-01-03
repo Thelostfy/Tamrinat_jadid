@@ -2,6 +2,9 @@ let gameboard = document.getElementById("MainDiv");
 let Tas = document.getElementById("Tas");
 let currentPosition = 0;
 let MaxOfPosition = 100;
+let player1 = document.createElement("div")
+player1.id = "player1",
+player1.className = "player";
 
 
 let CreateTable = () => {
@@ -48,6 +51,7 @@ let CreateTable = () => {
 }
 
 
+
 Tas.addEventListener("click", () => {
     let AdadRandom = Math.floor(Math.random() * 6) + 1;
 
@@ -72,13 +76,13 @@ Tas.addEventListener("click", () => {
     }
 
 //  مشکل داره
-    if (currentPosition !== 0) {
-        document.getElementById(currentPosition).style.backgroundColor = "";
-    }
+    // if (currentPosition !== 0) {
+    //     document.getElementById(currentPosition).style.backgroundColor = "";
+    // }
 
     currentPosition = newPosition;
 
-    document.getElementById(currentPosition).style.backgroundColor = "yellow";
+document.getElementById(currentPosition).appendChild(player1);
     
     if (newPosition === MaxOfPosition) {
         alert("Congratulations! You've reached the end!");
