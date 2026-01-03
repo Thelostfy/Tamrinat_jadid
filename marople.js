@@ -10,22 +10,34 @@ let CreateTable = () => {
         if (row % 2 === 0) {
             for (let col = 0; col < 10; col++) {
                 let div = document.createElement("div");
-                div.className = "cell";
+                div.className = "cell Zoj";
                 div.id = id;
                 div.innerText = id;
                 gameboard.appendChild(div);
                 id--;
+                        if (id % 2 === 0) {
+            div.style.backgroundColor = "rgba(74, 160, 46, 1)"
+        }
+        else{
+            div.style.backgroundColor = "rgb(90, 223, 46)"
+        }
             }
         }
         else {
             let baraxe = [];
             for (let col = 0; col < 10; col++) {
                 let div = document.createElement("div");
-                div.className = "cell";
+                div.className = "cell Fard";
                 div.id = id;
                 div.innerText = id;
                 baraxe.unshift(div);
                 id--;
+                        if (id % 2 === 0) {
+            div.style.backgroundColor = "rgba(74, 160, 46, 1)"
+        }
+        else{
+            div.style.backgroundColor = "rgb(90, 223, 46)"
+        }
             }
             baraxe.forEach((div) => {
                 gameboard.appendChild(div);
@@ -59,7 +71,7 @@ Tas.addEventListener("click", () => {
         return;
     }
 
-
+//  مشکل داره
     if (currentPosition !== 0) {
         document.getElementById(currentPosition).style.backgroundColor = "";
     }
@@ -67,6 +79,7 @@ Tas.addEventListener("click", () => {
     currentPosition = newPosition;
 
     document.getElementById(currentPosition).style.backgroundColor = "yellow";
+    
     if (newPosition === MaxOfPosition) {
         alert("Congratulations! You've reached the end!");
         return;
